@@ -6,6 +6,12 @@
 
 <%= link_to "Show all articless", articles_path %>
 
+<h2>Comments:</h2>
+<%(@article.comments.order 'created_at').each do |comment|%>
+<p><b><%= "#{comment.author} (#{comment.created_at})" %></b></p>
+<p><%=  comment.body %></p>
+<%end%>
+
 <p>
 <%= form_for ([@article, @article.comments.build]) do |f| %>
   <p><%= f.label :author %>
