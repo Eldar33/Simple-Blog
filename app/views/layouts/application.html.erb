@@ -14,7 +14,7 @@
     <% if !user_signed_in? %>
       <%=link_to 'Sign In', new_user_session_path%>
     <% else %>
-      Hello, <%= current_user.email %> |
+      Hello, <%= current_user.username %> |
       <%=link_to 'Sign Out', destroy_user_session_path, method: :delete%>
     <%end%>
 
