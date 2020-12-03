@@ -1,24 +1,57 @@
-<h1><%= @article.title %></h1>
 
-<p>
-	<%= @article.text %>
-</p>
+<div class = "container">
 
-<%= link_to "Show all articless", articles_path %>
+	<div class="row">
+		<div class=col-xs-12><h1><%= @article.title %></h1></div>
+	</div>
 
-<h2>Comments:</h2>
-<%(@article.comments.order 'created_at').each do |comment|%>
-<p><b><%= "#{comment.author} (#{comment.created_at})" %></b></p>
-<p><%=  comment.body %></p>
-<%end%>
+  <div class="row">
+		<div class=col-xs-12>
+			<%= @article.text %>
+		</div>
+	</div>
 
-<p>
-<%= form_for ([@article, @article.comments.build]) do |f| %>
-  <p> <%= f.hidden_field :author, value: current_user.username %></p>
-  
-  <%= f.text_area :body %></p>
+	<div class="row">
+		<div class=col-xs-9></div>
+		<div class=col-xs-3>
+			<%= link_to "Вернуться к списку статей", articles_path %>
+		</div>
+	</div>
 
-  <p><%= f.submit %></p>
-<% end %>
+	<div class="row">
+		<div class=col-xs-12>
+			<h3>Комментарии:</h3>
+		</div>
+	</div>
 
-</p>
+					
+	<%(@article.comments.order 'created_at').each do |comment|%>
+		<div class="row">
+			<div class=col-xs-2>
+				<b><%= "#{comment.author} (#{comment.created_at.strftime("%Y-%m-%d %H:%M:%S")})" %></b>
+			</div>
+			<div class=col-xs-3>  </div>
+			<div class=col-xs-9>
+				<%=  comment.body %>
+			</div>
+		</div>			
+	<%end%>
+
+	<div class="row">
+		<div class=col-xs-12>
+			<%= form_for ([@article, @article.comments.build]) do |f| %>
+			  <%= f.hidden_field :author, value: current_user.username %>	  
+			  <%= f.text_area :body %>
+		</div>
+	</div>
+	<div class="row">
+		<div class=col-xs-12>
+	  	<p><%= f.submit%></p>
+		<% end %>
+	</div>
+	</div>
+
+
+	</p>
+
+</div>
