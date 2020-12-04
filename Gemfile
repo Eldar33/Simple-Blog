@@ -44,6 +44,7 @@ group :test, :development do
   gem 'shoulda-matchers'
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
+  gem "factory_bot_rails"
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
