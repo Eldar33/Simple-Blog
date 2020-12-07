@@ -46,3 +46,6 @@ en:
     about:
       about_us: "About us"
       info: "I'm beginer web programmer"
+    terms:
+      header: "Terms of service"
+      body: "Bla bla bla bla"
