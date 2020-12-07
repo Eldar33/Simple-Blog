@@ -33,4 +33,6 @@ en:
   hello: "Hello world"
 
   contacts:
-    contact_us: "Contact Us!"
+    contact_us: "Contact Us"
+    button_text: "Send message"
+    create_text: "Thanks!"
