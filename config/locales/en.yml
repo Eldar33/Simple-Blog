@@ -41,3 +41,8 @@ en:
     question_destroy: "Are you sure?"
     return_to_list: "Return to list articles"
     comments_header: "Comments"
+
+  pages:
+    about:
+      about_us: "About us"
+      info: "I'm beginer web programmer"
