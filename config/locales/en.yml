@@ -36,3 +36,8 @@ en:
     contact_us: "Contact Us"
     button_text: "Send message"
     create_text: "Thanks!"
+
+  articles:
+    question_destroy: "Are you sure?"
+    return_to_list: "Return to list articles"
+    comments_header: "Comments"
