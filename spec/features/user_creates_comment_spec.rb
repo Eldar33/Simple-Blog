@@ -1,14 +1,15 @@
 require 'rails_helper'
+require 'support/session_helper'
 
 feature 'Comment creation' do
 
   before(:each) do
     sign_up
-    @article_id = create_article
+    @article = create_article
   end 
 
   scenario 'allows user add comment' do
-    visit article_path(@article_id)
+    visit article_path(@article.id)
     expect(page).to have_button 'Create Comment'
     fill_in :comment_body, with: 'Test comment'
     click_button 'Create Comment'
@@ -17,7 +18,3 @@ feature 'Comment creation' do
   
 end
 
-def create_article
-  article = create(:article, title: 'It\'s title of article')
-  return article.id
-end
